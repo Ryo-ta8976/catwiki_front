@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { VFC } from 'react'
+import './App.css'
+import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
+import Home from './Home'
+import Detail from './Detail'
 
-function App() {
+const App: VFC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <div className="App">
+        <Link to="/">Home</Link>
+        <Link to="/detail">Detail</Link>
+      </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/detail">
+          <Detail />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
