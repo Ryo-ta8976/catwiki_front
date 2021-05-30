@@ -4,10 +4,15 @@ import InvertLogoImage from '../atoms/InvertLogoImage'
 
 const Footer: VFC = () => {
   return (
-    <Box padding="10px" bg="black" borderRadius="30px" height="100px">
+    <Box padding="10px" bg="black" borderRadius="30px 30px 0px 0px" p={6}>
       <InvertLogoImage />
-      <Text marginRight="10px" display="inline-block" color="white">
-        created by r.akiyama - devChallenge.io 2021
+      <Text
+        marginRight="10px"
+        display="inline-block"
+        color="white"
+        ml={{ base: 0, lg: '60%' }}
+      >
+        &copy;created by r.akiyama - devChallenge.io 2021
       </Text>
     </Box>
   )
